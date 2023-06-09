@@ -43,8 +43,6 @@ class Foto(models.Model):
 	id_noticia = models.ForeignKey(Noticia,on_delete=models.CASCADE,db_column='Id_Noticia')
 	def __str__(self):
 		return str(self.nom_foto)
-	class Meta():
-		ordering = ["id_Foto"]
 
 class Form_contact(models.Model):
 	id_form_cont = models.AutoField(db_column='Id_form_cont',primary_key=True)

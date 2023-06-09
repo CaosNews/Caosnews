@@ -5,7 +5,7 @@
 - ~~modelo de BD~~
 - paginas y diseño
 - ~~que noticia.destacada sea Boolean~~
-- que se puedan linkear varias fotos en la noticia
+- ~~que se puedan linkear varias fotos en la noticia~~
 - ~~Id de noticia y participante automatica~~
 
 ---
