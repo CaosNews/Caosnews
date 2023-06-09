@@ -4,6 +4,9 @@
 - inicio de sesion? para los periodistas
 - ~~modelo de BD~~
 - paginas y diseño
+- ~~que noticia.destacada sea Boolean~~
+- que se puedan linkear varias fotos en la noticia
+- ~~Id de noticia y participante automatica~~
 
 ---
 
@@ -17,7 +20,7 @@
 	en el cmd prompt(terminal)
 - Instala Django y el cliente de MySql con
 
-		> pip install -r reqs.txt
+		> pip install -r ../reqs.txt
 		> pip install mysqlclient
 	Una vez hecho esto el proyacto funcionara normalmente
 
