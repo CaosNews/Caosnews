@@ -22,3 +22,5 @@ def Index(request):
 def Gale(request):
     context = NotiFoto()
     return render(request, 'Galeria.html',context)
+def Noti(request):
+    return render(request, 'Noticia.html')
