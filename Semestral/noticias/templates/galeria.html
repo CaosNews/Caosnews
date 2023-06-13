@@ -48,7 +48,7 @@
             {% if x.id_noticia == i.id_noticia %}
                 <div class="col-md-3">
                     <div class="card" style="width: 18rem;">
-                        <img src="{% static 'img/' %}{{x.dir}}" class="card-img-top" alt="...">
+                        <img src="{% static 'img/' %}{{x.dir}}" class="card-img-top" alt="{{x.dir}}">
                         <div class="card-body">
                             <h5 class="card-title">{{i.titulo}}</h5>
                             <p class="card-text">{{i.detalle}}</p>

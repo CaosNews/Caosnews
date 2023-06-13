@@ -81,7 +81,7 @@
 			<div class="col-md-2"></div>
 		</div>
 	</div>
-	<br><br><br>
+	<br><br><hr>
 	<!-- noticia destacada -->
 	<div class="container">
 		{% for i in noticia %}
@@ -89,18 +89,20 @@
 		{% for x in foto %}
 		{% if x.id_noticia == i.id_noticia %}
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-2"></div>
+			<div class="col-md-5">
 				<h3>{{i.titulo}}</h3>
 				<br>
 				<p>{{i.Detalle}}</p>
 			</div>
-			<div class="col-md-1"></div>
-			<div class="col-md-5">
+			<div class="col-md-4">
 				<center><img src="{% static 'img/' %}{{x.dir}}" alt="" width="95%"></center>
 			</div>
+			<div class="col-md-1"></div>
 		</div>
 		{% endif %}
 		{% endfor %}
+		<hr>
 		{% endif %}
 		{% endfor %}
 	</div>
@@ -111,13 +113,13 @@
 			{% for x in noticia %}
 			{% for f in foto %}
 			{% if x.id_noticia == f.id_noticia %}
-			<div class="col-md-3">
+			<div class="col-md-3 col-sm-6">
 				<div class="card" style="width: 18rem;">
-					<img src="{% static 'img/' %}{{f.dir}}" class="card-img-top" alt="...">
+					<img src="{% static 'img/' %}{{f.dir}}" class="card-img-top" alt="{{f.dir}}">
 					<div class="card-body">
 						<h5 class="card-title">{{x.titulo}}</h5>
 						<p class="card-text">{{x.Detalle}}</p>
-						<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+						<a href="#" class="btn btn-primary">Go somewhere</a>
 					</div>
 				</div>
 			</div>
