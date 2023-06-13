@@ -1,0 +1,42 @@
+/* cuadro de formulario estilo.css*/
+body {
+  font-family: sans-serif;
+  
+  
+}
+
+
+
+
+.bordes {
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-radius: 50px;
+    background-color: rgb(186, 191, 195);
+    padding: 30px;  
+}
+
+
+
+body {
+    height: 400px;
+    background-image: url("{% static '/img/registro.jpg' %}");
+  background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+  }
+  
+  form div input {
+    width: 100%;
+    height: 40px;
+    border-radius: 80px;
+    outline: none;
+    border: 4px solid #783b9e;
+    padding: 0 30px;
+    box-shadow: 3px 3px 4px rgba(28, 12, 46, 0.502);
+    
+  }
+
+  
+  
+  
