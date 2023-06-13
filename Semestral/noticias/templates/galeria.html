@@ -26,7 +26,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="Index">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'Index' %}">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="galeria">Galeria</a>
@@ -41,24 +41,24 @@
     </nav>
     <center><h1>Galeria de noticias.</h1></center>
     <hr><br>
-    <div class="conteiner">
+    <div class="container">
         <div class="row">
-            {% for i in noti%}
+            {% for i in noticia %}
+            {% for x in foto %}
+            {% if x.id_noticia == i.id_noticia %}
                 <div class="col-md-3">
                     <div class="card" style="width: 18rem;">
-                        <img src="{% static 'img/cassio.jpg' %}" class="card-img-top" alt="...">
+                        <img src="{% static 'img/' %}{{x.dir}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Casio se vuelve la nueva sensacion en reloj.</h5>
-                            <p class="card-text">En boca de todos está el nuevo sencillo de Shakira, Music Sessions #53,
-                                lanzado con el productor argentino Bizarrap. Es una andanada de misiles contra su ex esposo,
-                                Gerard Piqué, tras haberla dejado por la joven Clara Chía, a la que compara con… un reloj
-                                Casio.</p>
+                            <h5 class="card-title">{{i.titulo}}</h5>
+                            <p class="card-text">{{i.detalle}}</p>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>
+            {% endif %}
             {% endfor %}
-            <!-- -->
+            {% endfor %}
         </div>
     </div>
 
