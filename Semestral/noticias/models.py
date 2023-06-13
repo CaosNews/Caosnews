@@ -42,7 +42,7 @@ class Foto(models.Model):
 	nom_foto = models.CharField(max_length=120)
 	id_noticia = models.ForeignKey(Noticia,on_delete=models.CASCADE,db_column='Id_Noticia')
 	def __str__(self):
-		return str(self.nom_foto)
+		return str(self.id_noticia)+'| '+str(self.nom_foto)
 
 class Form_contact(models.Model):
 	id_form_cont = models.AutoField(db_column='Id_form_cont',primary_key=True)

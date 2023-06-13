@@ -1,17 +1,23 @@
-from django.db.models import Max
+from django.db.models import Max,Min
 from django.shortcuts import render
 from .models import Noticia,Foto
 
 # Create your views here.
-def Index(request):
+def NotiFoto():
     noticia = Noticia.objects.all()
     foto = (Foto.objects
             .values('id_noticia')
             .annotate(
 							dir=Max('nom_foto')
 						))
-    context={
+    return {
         'noticia':noticia
-        ,'foto': foto
-    }
+        ,'foto': foto}
+
+
+def Index(request):
+    context = NotiFoto()
     return render(request, 'Index.html',context)
+def Gale(request):
+    context = NotiFoto()
+    return render(request, 'Galeria.html',context)
