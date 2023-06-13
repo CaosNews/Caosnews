@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <!-- css boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- css personal -->
+    <link rel="stylesheet" href="{% static 'css/estilo2.css' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Caos news</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Index">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galeria">Galeria</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-outline-warning" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <center><h1>Galeria de noticias.</h1></center>
+    <hr><br>
+    <div class="conteiner">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'img/cassio.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Casio se vuelve la nueva sensacion en reloj.</h5>
+                        <p class="card-text">En boca de todos está el nuevo sencillo de Shakira, Music Sessions #53,
+                            lanzado con el productor argentino Bizarrap. Es una andanada de misiles contra su ex esposo,
+                            Gerard Piqué, tras haberla dejado por la joven Clara Chía, a la que compara con… un reloj
+                            Casio.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'img/asteroide.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Asteroide Harbat colisionara con la tierra en t - 55 horas.</h5>
+                        <p class="card-text">En los últimos tiempos, estos miedos han mutado y se han adaptado a los
+                            nuevos conocimientos y a las nuevas herramientas científicas. Es más, los anuncios más
+                            recientes sobre el fin del mundo se basan, en muchas ocasiones, en posibles colisiones del
+                            planeta azul con asteroides o cometas que transitan en órbitas similares a las de la Tierra.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'img/messi.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Messi baja su rendimiento.</h5>
+                        <p class="card-text">Argentina es campeón del mundo, la albiceleste rompió la sequía de 26 años
+                            sin título mundial y se cobraron la revancha de la última perdida en Brasil 2014 ante
+                            Alemania.
+
+                            Lionel Messi jugó tal vez su último mundial y lo hizo de manera brillante, aportando siete
+                            goles a su equipo y consiguiendo un doblete en la final lo que le valió ser el MVP del
+                            torneo en un premio otorgado por la FIFA.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'img/calor.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Olas de calor vuelven de color verde la piel.</h5>
+                        <p class="card-text">El golpe de calor, aunque peligroso, no es el único riesgo de las altas
+                            temperaturas. El agravamiento de enfermedades previas y efectos en la salud mental son otras
+                            posibles consecuencias. El exceso de calor compromete el sistema nervioso central, el
+                            aparato circulatorio y el sistema respiratorio.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <hr><br><br>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'img/oso.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">El oso panda.</h5>
+                        <p class="card-text">A pesar del número de ejemplares limitado y de las reducidas zonas donde
+                            habita, es uno de los animales más reconocibles de todos los rincones del mundo. Durante
+                            larga tiempo estuvo en grave riesgo de extinción y se convirtió el símbolo del Fondo Mundial
+                            para la Naturaleza. Actualmente la cantidad ejemplares en libertad está en aumento. </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'img/dedo.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">La creacion de adan.</h5>
+                        <p class="card-text">La creación de Adán es una pintura al fresco ubicada en la bóveda de la
+                            Capilla Sixtina, en el Vaticano. Forma parte de un gran ciclo iconográfico dedicado a la
+                            historia universal, de acuerdo con la concepción del cristianismo, antes de la ley de
+                            Moisés.
+                            Fue realizada por el artista florentino Miguel Ángel Buonarroti a principios del siglo XVI.
+                            La obra ocupa uno de los 9 recuadros centrales que narran distintos episodios de la historia
+                            bíblica de la humanidad de acuerdo con el libro del Génesis, desde la creación hasta la
+                            historia de Noé y el renacer de la humanidad luego del diluvio universal.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'img/frio.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Ola de frio afecta EE.UU.</p>
+                            <p class="card-text">El presidente de Estados Unidos, Donald Trump, aprovechó la ola de frío
+                            extremo que afecta a partes de su país para volver a poner en duda la existencia del cambio
+                            climático.
+                            "En el hermoso Medio Oeste, la temperatura del viento está bajando hasta los -60 (-51 ºC),
+                            el mayor frío registrado. En los próximos días, se espera que (los termómetros) caigan aún
+                            más. La gente no puede estar afuera ni siquiera unos minutos. ¿Qué diablos está pasando con
+                            el calentamiento global? Por favor, vuelve rápido, ¡te necesitamos!", tuiteó el mandatario.
+                            </p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'img/Cristiano.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Cristiano Ronaldo puede ser el mejor.</h5>
+                        <p class="card-text">Cristiano Ronaldo dos Santos Aveiro nació en Madeira el 5 de febrero de
+                            1985. Es conocido como Cristiano Ronaldo o CR7, y se trata de un futbolista portugués que
+                            juega actualmente como delantero en el Manchester United Football Club de la Premier League
+                            de Inglaterra y en la selección de Portugal, de la cual es su capitán y máximo goleador
+                            histórico. Su trayectoria es la siguiente: Sporting C. P. (2002-03); Manchester United F. C.
+                            (2003-09); Real Madrid C. F. (2009-18); Juventus F. C. (2018-21), y Manchester United F. C.
+                            (2021- presente).</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <!-- boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- js personal -->
+    <script src="{% static 'js/java.js' %}"></script>
+</body>
+
+</html>
