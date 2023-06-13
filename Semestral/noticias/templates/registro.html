@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
     <title>Registro</title>
-
 </head>
-
 <body>
-
     <div class="container">
         <br><br><br>
 
@@ -24,7 +19,7 @@
             <div class="col-3"></div>
             <div class="col-6">
                 <!-- cambiar pagina una ves enviado el formulario -->
-                <form action="index.html" method="get" name="" enctype="">
+                <form action="Index.html" method="post" name="" enctype="">
                     <div class="form-group bordes">
                         <!-- tipos inputs -->
                         <h1 class="text-center">Registro</h1>
@@ -53,22 +48,7 @@
                         <input type="password" id="contraseña2Id" class="form-control" name="contraseña2" value=""
                             onkeyup="validarContraseña2()">
                         <p id="pContraseña2"></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         <br>
-
 
                         <button type="button" class="btn btn-success">Registrar</button>
 
