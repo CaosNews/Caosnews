@@ -1,6 +1,7 @@
 from django.db.models import Max,Min
 from django.shortcuts import render
 from .models import Noticia,Foto
+from django.contrib.auth.decorators import login_required 
 
 # Create your views here.
 def NotiFoto():
