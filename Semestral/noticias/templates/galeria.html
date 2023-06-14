@@ -3,74 +3,74 @@
 {% load static %}
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CaosNews</title>
-    <!-- css boostrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- css personal -->
-    <link rel="stylesheet" href="{% static 'css/estilo2.css' %}">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CaosNews</title>
+	<!-- css boostrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<!-- css personal -->
+	<link rel="stylesheet" href="{% static 'css/estilo2.css' %}">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Caos news</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'Index' %}">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="galeria">Galeria</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                    <button class="btn btn-outline-warning" type="submit">Buscar</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-    <center><h1>Galeria de noticias.</h1></center>
-    <hr><br>
-    <div class="container">
-        <div class="row">
-            {% for i in noticia %}
-            {% for x in foto %}
-            {% if x.id_noticia == i.id_noticia %}
-                <div class="col-md-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{% static 'img/' %}{{x.dir}}" class="card-img-top" alt="{{x.dir}}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{i.titulo}}</h5>
-                            <p class="card-text">{{i.detalle}}</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-            {% endif %}
-            {% endfor %}
-            {% endfor %}
-        </div>
-    </div>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Caos news</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="{% url 'Index' %}">Inicio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="galeria">Galeria</a>
+					</li>
+				</ul>
+				<form class="d-flex">
+					<input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+					<button class="btn btn-outline-warning" type="submit">Buscar</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+	<h1 style="text-align: center;">Caos news</h1>
+	<hr><br>
+	<div class="container">
+		<div class="row" style="padding: 10px 50px 10px 50px; ">
+			{% for x in noticia %}
+			{% for f in foto %}
+			{% if x.id_noticia == f.id_noticia %}
+			<div class="col-md-4 col-sm-6" style="width: fit-content; margin-top: 30px;">
+				<div class="card" style="width: 17rem;">
+					<img src="{% static 'img/' %}{{f.dir}}" class="card-img-top" alt="{{f.dir}}">
+					<div class="card-body">
+						<h5 class="card-title">{{x.titulo}}</h5>
+						<p class="card-text">{{x.Detalle}}</p>
+						<a href="{% url 'Noticia' id=x.id_noticia %}" class="btn btn-primary">Ver más</a>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+			{% endfor %}
+			<br>
+			{% endfor %}
+		</div>
+	</div>
 
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.7.0.js"
-        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
-    <!-- boostrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <!-- js personal -->
-    <script src="{% static 'js/java.js' %}"></script>
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+		crossorigin="anonymous"></script>
+	<!-- boostrap -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<!-- js personal -->
+	<script src="{% static 'js/java.js' %}"></script>
 </body>
 
 </html>

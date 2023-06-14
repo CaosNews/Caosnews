@@ -40,9 +40,7 @@
 		</div>
 	</nav>
 	<br>
-	<center>
-		<h1>Caos news</h1>
-	</center>
+		<h1 style="text-align: center;">Caos news</h1>
 	<br>
 	<!-- carousel -->
 	<div class="container">
@@ -109,22 +107,23 @@
 	<br><br><br>
 	<!-- cards con las noticias -->
 	<div class="container">
-		<div class="row">
+		<div class="row" style="padding: 10px 50px 10px 50px;">
 			{% for x in noticia %}
 			{% for f in foto %}
 			{% if x.id_noticia == f.id_noticia %}
-			<div class="col-md-3 col-sm-6">
-				<div class="card" style="width: 18rem;">
+			<div class="col-md-4 col-sm-6" style="width: fit-content; margin-top: 20px;">
+				<div class="card" style="width: 17rem;">
 					<img src="{% static 'img/' %}{{f.dir}}" class="card-img-top" alt="{{f.dir}}">
 					<div class="card-body">
 						<h5 class="card-title">{{x.titulo}}</h5>
 						<p class="card-text">{{x.Detalle}}</p>
-						<a href="{% url 'Noticia' id=x.id_noticia %}" class="btn btn-primary">Go somewhere</a>
+						<a href="{% url 'Noticia' id=x.id_noticia %}" class="btn btn-primary">Ver más</a>
 					</div>
 				</div>
 			</div>
 			{% endif %}
 			{% endfor %}
+			<br>
 			{% endfor %}
 		</div>
 	</div>
