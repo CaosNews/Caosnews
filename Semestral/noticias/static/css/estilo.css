@@ -13,7 +13,7 @@ body {
 
 body {
 	height: 400px;
-	background-image: url("{% static '/img/registro.jpg' %}");
+	background-image: url("../img/registro.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
