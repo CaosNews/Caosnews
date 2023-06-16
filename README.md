@@ -1,7 +1,7 @@
 # TO-DO
 
 - un formulario para noticias de la gente
-- diseño de la pagina noticias
+- diseño de la pagina
 - inicio de sesion? para los periodistas
 - ~~modelo de BD~~
 - paginas y diseño
