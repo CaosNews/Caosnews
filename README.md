@@ -4,6 +4,7 @@
 - diseño de la pagina
 - inicio de sesion? para los periodistas
 - ~~modelo de BD~~
+- ~~BDD movil (sqlite3)~~
 - paginas y diseño
 - ~~que noticia.destacada sea Boolean~~
 - ~~que se puedan linkear varias fotos en la noticia~~
@@ -33,3 +34,8 @@
 	```python
 	settings.py
 	```
+## Random Info
+- al admin es
+
+		Username: Admin
+		password: 1234

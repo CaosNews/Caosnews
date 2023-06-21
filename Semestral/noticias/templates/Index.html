@@ -120,11 +120,11 @@
 	<br><br><br>
 	<!-- cards con las noticias -->
 	<div class="container">
-		<div class="row" style="padding: 10px 50px 10px 50px;">
+		<div class="row justify-content-center" >
 			{% for x in noticia %}
 			{% for f in foto %}
 			{% if x.id_noticia == f.id_noticia %}
-			<div class="col-md-4 col-sm-6" style="width: fit-content; margin-top: 20px;">
+			<div class="col-3" style="width: fit-content; margin-top: 20px;">
 				<div class="card" style="width: 17rem;">
 					<img src="{% static 'img/' %}{{f.dir}}" class="card-img-top" alt="{{f.dir}}">
 					<div class="card-body">
@@ -136,7 +136,7 @@
 			</div>
 			{% endif %}
 			{% endfor %}
-			<br>
+			
 			{% endfor %}
 		</div>
 	</div>
