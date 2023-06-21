@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +13,7 @@
 	<!-- css personal -->
 	<link rel="stylesheet" href="{% static 'css/estilo.css' %}">
 </head>
+
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-fluid">
@@ -29,17 +31,18 @@
 						<a class="nav-link" href="{% url 'Galeria' %}">Galeria</a>
 					</li>
 					{% if user.is_authenticated %}
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Hola {{user.username}}</a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a href="{% url 'logout' %}" class="dropdown-item">Logout</a></li>
-							</ul>
-						</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false">
+							Hola {{user.username}}</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a href="{% url 'logout' %}" class="dropdown-item">Logout</a></li>
+						</ul>
+					</li>
 					{% else %}
-						<li class="nav-item">
-							<a href="{% url 'login' %}" class="nav-link">Login</a>
-						</li>
+					<li class="nav-item">
+						<a href="{% url 'login' %}" class="nav-link">Login</a>
+					</li>
 					{% endif %}
 				</ul>
 				<form class="d-flex">
@@ -50,19 +53,34 @@
 		</div>
 	</nav>
 	<br>
-		<h1 style="text-align: center;">Caos news</h1>
-	<br>
-	<!-- datos de noticia -->
-	{% for i in noticia%}
-	<h1>{{i.titulo}}</h1>
-	{% endfor %}
-	<!-- mostrar fotos -->
-	{% for i in fotos%}
-		{% for x in i%}
-		<img src="{% static 'img/' %}{{x.nom_foto}}" alt="{{x.nom_foto}}">
-		{% endfor %}
-	{% endfor %}
-
+	<h1 style="text-align: center;">Caos news</h1>
+	<br><br>
+	<hr>
+	<div class="container">
+		<h2 style="text-align: center;">{{noticia.0.titulo}}</h2>
+		<br>
+		<div class="clearfix">
+			<img src="{% static 'img/' %}{{fotos.0.nom_foto}}" alt="{{fotos.0.nom_foto}}"
+				class="col-md-5 float-md-end mb-3 ms-md-3" width="100%" focusable="false">
+			<br>
+			<!-- datos de noticia -->
+			<p>{{noticia.0.Detalle|linebreaks}}</p>
+			<!-- mostrar fotos -->
+			<br><br><br>
+			<p></p>
+		</div>
+		<br>
+		<div class="row justify-content-center">
+			{% for i in fotos%}
+			{% if forloop.counter0 > 0 and forloop.counter0 <= 3%}
+			<div class="col-4">
+				<img src="{% static 'img/' %}{{i.nom_foto}}" alt="{{i.nom_foto}}" width="90%">
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+		<br><br><br>
+	</div>
 	<!-- jquery -->
 	<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 		crossorigin="anonymous"></script>
@@ -71,4 +89,5 @@
 		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 		crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -8,10 +8,8 @@ def S_NotiFoto(id_n):
 	noticia = Noticia.objects.all().filter(pk=id_n)
 	foto = Foto.objects.all().filter(id_noticia__exact=id_n)
 	return {
-		'noticia':noticia,
-		'fotos':{
-			foto
-		}
+			'noticia':noticia,
+			'fotos': foto
 	}
 def A_NotiFoto():
 	noticia = Noticia.objects.all()
@@ -31,4 +29,4 @@ def Gale(request):
 
 def Noti(request, id):
 	context = S_NotiFoto(id)
-	return render(request, "Noticia.html", context)
+	return render(request, "Noticia.html",context)

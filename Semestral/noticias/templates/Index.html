@@ -104,7 +104,7 @@
 			<div class="col-md-5">
 				<h3>{{i.titulo}}</h3>
 				<br>
-				<p>{{i.Detalle}}</p>
+				<p>{{i.Desc_mini}}</p>
 			</div>
 			<div class="col-md-4">
 				<center><img src="{% static 'img/' %}{{x.dir}}" alt="" width="95%"></center>
@@ -125,11 +125,11 @@
 			{% for f in foto %}
 			{% if x.id_noticia == f.id_noticia %}
 			<div class="col-3" style="width: fit-content; margin-top: 20px;">
-				<div class="card" style="width: 17rem;">
+				<div class="card" style="width: 17rem">
 					<img src="{% static 'img/' %}{{f.dir}}" class="card-img-top" alt="{{f.dir}}">
 					<div class="card-body">
 						<h5 class="card-title">{{x.titulo}}</h5>
-						<p class="card-text">{{x.Detalle}}</p>
+						<p class="card-text">{{x.Desc_mini}}</p>
 						<a href="{% url 'Noticia' id=x.id_noticia %}" class="btn btn-primary">Ver más</a>
 					</div>
 				</div>
