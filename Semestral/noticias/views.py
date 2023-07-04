@@ -2,6 +2,16 @@ from django.db.models import Max
 from django.shortcuts import render
 from .models import Noticia, Foto
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse_lazy
+from django.views import generic
+from .forms import signUpForm
+
+# para el register y back *shrugs*
+
+class SignUpView(generic.CreateView):
+    form_class = signUpForm
+    success_url = reverse_lazy("login")
+    template_name = "registration/signup.html"
 
 # Create your views here.
 def S_NotiFoto(id_n):
