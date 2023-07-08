@@ -8,8 +8,8 @@
 		{% for x in noticia %}
 		{% for f in foto %}
 		{% if x.id_noticia == f.id_noticia %}
-		<div class="col-4" style="width: fit-content; margin-top: 30px;">
-			<div class="card" style="width: 17rem;">
+		<div class="col-3" style="width: fit-content; margin-top: 30px;">
+			<div class="card" style="width: 16rem;">
 				<img src="{% static 'img/' %}{{f.dir}}" class="card-img-top" alt="{{f.dir}}">
 				<div class="card-body">
 					<h5 class="card-title">{{x.titulo}}</h5>
