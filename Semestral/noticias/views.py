@@ -1,12 +1,18 @@
 from django.db.models import Max
 from django.shortcuts import render
-from .models import Noticia, Foto
+from .models import Noticia, Foto, Parti, Categoria
+
 from django.contrib.auth.decorators import login_required
+
 from django.urls import reverse_lazy
 from django.views import generic
-from .forms import signUpForm
+from .forms import *
 
 # para el register y back *shrugs*
+class Noticia_View(generic.CreateView):
+	form_class = FormNoticia
+	success_url = reverse_lazy('Index')
+	template_name = "publicar.html"
 
 class SignUpView(generic.CreateView):
     form_class = signUpForm

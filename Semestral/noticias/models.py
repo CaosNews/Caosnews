@@ -34,7 +34,12 @@ class Noticia(models.Model):
 	Ubicacion = models.CharField(max_length=120)
 	destacada = models.BooleanField()
 	id_categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE,db_column='IdCategory')
-	id_parti = models.ForeignKey(Parti,on_delete=models.CASCADE,db_column='Id_Parti')
+	id_parti = models.ForeignKey(
+		Parti
+		,on_delete=models.CASCADE
+		,limit_choices_to={'id_tp_part':1}
+		,db_column='Id_Parti')
+
 	def __str__(self):
 		return str(self.titulo)
 
